@@ -1,0 +1,15 @@
+{
+  "name": "Bright & Brown Solutions LLC",
+  "email": "ralphbrown959@gmail.com",
+  "phone": "616-381-6077",
+  "phoneFormatted": "(616)-381-6077",
+  "address": {
+    "lineOne": "First Address Line",
+    "lineTwo": "Second Address Line, If Needed",
+    "city": "Grand Rapids",
+    "county": "MI",
+    "postcode": "49503",
+    "mapLink": "https://goo.gl/maps/"
+  },
+  "domain": "www.brightandbrownsolutions.com"
+}

@@ -1,0 +1,71 @@
+---
+layout: 'base.html'
+description: "Learn about Bright & Brown Solutions LLC, a trusted provider of residential and commercial cleaning services in Michigan. We specialize in deep cleaning, floor care, carpet shampooing, painting, and more — always done thoroughly and with pride."
+metaTitle: 'About Us | Bright & Brown Solutions LLC'
+tagTitle: 'About Us'
+preloadImg: '/images/landing.png'
+preloadCSS: '/css/about.css'
+permalink: 'about/'
+eleventyNavigation:
+  key: About Us
+  order: 300
+---
+
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+  <h1 id="home-h">About Us</h1>
+  {% image './src/images/landing.png', 'cleaning services team at work', '', 'lazy', '(max-width: 850px) 850px, 1920px'%}
+</section>
+
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs">
+  <div class="cs-container">
+    <!-- Left Image Section -->
+    <div class="cs-left">
+      {% image './src/images/about_img_0.png', 'professional cleaners at work', 'cs-picture cs-picture1', 'lazy'%}
+    </div>
+    <!-- Right Content Section-->
+    <div class="cs-right">
+      <span class="cs-topper">About Us</span>
+      <h2 class="cs-title">Who We Are</h2>
+      <p class="cs-text">
+        At Bright & Brown Solutions LLC, we pride ourselves on delivering high-quality residential and commercial cleaning services across Michigan. Whether it’s basic or deep cleaning, carpet shampooing, floor stripping and waxing, window cleaning, or even room painting — we make sure every project is done right the first time.
+      </p>
+      <p class="cs-text">
+        Our founder studied janitorial trade and horticulture, building a strong foundation in cleanliness, attention to detail, and pride in hard work. That passion shines through every service we provide — ensuring homes, offices, and facilities not only look their best but also feel fresh and welcoming.
+      </p>
+      <div class="cs-flex-group">
+        <p class="cs-flex-p">
+          "A clean space is more than just appearance — it’s peace of mind. We work thoroughly so you can enjoy a spotless, worry-free environment."
+        </p>
+        <span class="cs-name">Ralph Brown</span>
+        <span class="cs-job">Founder</span>
+        <img class="cs-quote-icon" loading="lazy" decoding="async"
+          src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="quote icon" width="136"
+          height="77">
+      </div>
+      <a href="/contact/" class="button-solid">More About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--             Final Call to Action             -->
+<!-- ============================================ -->
+
+<section id="cta">
+  <div class="container">
+    <h2 class="title">Get It Done <br> With Us Today</h2>
+    <p>
+      Ready for a spotless home or office? Contact Bright & Brown Solutions LLC today for a free estimate — we’ll take care of the rest.
+    </p>
+    <a href="/contact.html" class="button-solid">Free Estimate</a>
+  </div>
+  {% image './src/images/final_home_img.png', 'clean and polished room after service', '', 'lazy', '(max-width: 400px) 400px, (max-width: 850px) 850px, 1920'%}
+</section>
