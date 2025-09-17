@@ -1,15 +1,15 @@
 {
-  "name": "Bright & Brown Solutions LLC",
-  "email": "ralphbrown959@gmail.com",
-  "phone": "616-381-6077",
-  "phoneFormatted": "(616)-381-6077",
+  "name": "W. C. McLEOD AGENCY",
+  "email": "wcmcorp@gmail.com",
+  "phone": "734-225-4919",
+  "phoneFormatted": "(734)-225-4919",
   "address": {
     "lineOne": "First Address Line",
     "lineTwo": "Second Address Line, If Needed",
-    "city": "Grand Rapids",
+    "city": "To Be Added",
     "county": "MI",
-    "postcode": "49503",
+    "postcode": "To Be Added",
     "mapLink": "https://goo.gl/maps/"
   },
-  "domain": "www.brightandbrownsolutions.com"
+  "domain": "www.wcmcleodagency.com"
 }

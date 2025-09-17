@@ -14,12 +14,11 @@
         <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
         <a class="logo" aria-label="click to go to home page" href="/">
             <!--Light Colored Logo, remove .dark image tag and the .light class if you don't have a dark and light version -->
-            <!-- <img class="light" aria-hidden="true" src="/assets/images/logo-light.png" decoding="async" alt="logo"> -->
+            <img class="light" aria-hidden="true" src="/assets/images/logo_dark.png" decoding="async" alt="logo">
 
             <!--Dark Colored Logo-->
-            <!-- <img class="dark" aria-hidden="true" src="/assets/images/logo-blue.png" decoding="async" loading="lazy" alt="logo"> -->
+            <img class="dark" aria-hidden="true" src="/assets/images/logo_light.png" decoding="async" loading="lazy" alt="logo">
 
-            <h1 class="site-title">LOGO HERE</h1>
         </a>
 
         <!--Mobile Nav toggle-->
@@ -38,10 +37,10 @@
                         {{ entry.title }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/residential-commercial-cleaning/">Residential & Commercial Cleaning</a></li>
-                        <li><a href="/floor-care-services/">Floor Care Services</a></li>
-                        <li><a href="/carpet-upholstery-cleaning/">Carpet & Upholstery Cleaning</a></li>
-                        <li><a href="/painting-detailing/">Painting & Detailing</a></li>
+                        <li><a href="/life-insurance-solutions/">Life Insurance Solutions</a></li>
+                        <li><a href="/medicare-plans/">Medicare Plans</a></li>
+                        <li><a href="/health-ancillary-coverage/">Health & Ancillary Coverage</a></li>
+                        <li><a href="/consulting-guidance/">Consulting & Guidance</a></li>
                     </ul>
                     {% else %}
                     <a {% if entry.url==page.url %} class="active" {% endif %} href="{{ entry.url }}">
