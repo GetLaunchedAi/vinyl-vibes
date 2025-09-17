@@ -37,10 +37,10 @@
                         {{ entry.title }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/life-insurance-solutions/">Life Insurance Solutions</a></li>
-                        <li><a href="/medicare-plans/">Medicare Plans</a></li>
-                        <li><a href="/health-ancillary-coverage/">Health & Ancillary Coverage</a></li>
-                        <li><a href="/consulting-guidance/">Consulting & Guidance</a></li>
+                        <li><a class="service-link" href="/life-insurance-solutions/">Life Insurance Solutions</a></li>
+                        <li><a class="service-link" href="/medicare-plans/">Medicare Plans</a></li>
+                        <li><a class="service-link" href="/health-ancillary-coverage/">Health & Ancillary Coverage</a></li>
+                        <li><a class="service-link" href="/consulting-guidance/">Consulting & Guidance</a></li>
                     </ul>
                     {% else %}
                     <a {% if entry.url==page.url %} class="active" {% endif %} href="{{ entry.url }}">
