@@ -14,11 +14,12 @@
         <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
         <a class="logo" aria-label="click to go to home page" href="/">
             <!--Light Colored Logo, remove .dark image tag and the .light class if you don't have a dark and light version -->
-            <img class="light" aria-hidden="true" src="/assets/images/logo_dark.png" decoding="async" alt="logo">
+            <!-- <img class="light" aria-hidden="true" src="/assets/images/logo_dark.png" decoding="async" alt="logo"> -->
 
             <!--Dark Colored Logo-->
-            <img class="dark" aria-hidden="true" src="/assets/images/logo_light.png" decoding="async" loading="lazy" alt="logo">
+            <!-- <img class="dark" aria-hidden="true" src="/assets/images/logo_light.png" decoding="async" loading="lazy" alt="logo"> -->
 
+            <p class="logo-text">LOGO HERE</p>
         </a>
 
         <!--Mobile Nav toggle-->
@@ -37,10 +38,10 @@
                         {{ entry.title }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="service-link" href="/life-insurance-solutions/">Life Insurance Solutions</a></li>
-                        <li><a class="service-link" href="/medicare-plans/">Medicare Plans</a></li>
-                        <li><a class="service-link" href="/health-ancillary-coverage/">Health & Ancillary Coverage</a></li>
-                        <li><a class="service-link" href="/consulting-guidance/">Consulting & Guidance</a></li>
+                        <li><a class="service-link" href="/roofing-siding/">Roofing & Siding</a></li>
+                        <li><a class="service-link" href="/flooring-painting/">Flooring & Painting</a></li>
+                        <li><a class="service-link" href="/kitchen-remodeling/">Kitchen Remodeling</a></li>
+                        <li><a class="service-link" href="/bathroom-remodeling/">Bathroom Remodeling & Insurance Restoration</a></li>
                     </ul>
                     {% else %}
                     <a {% if entry.url==page.url %} class="active" {% endif %} href="{{ entry.url }}">

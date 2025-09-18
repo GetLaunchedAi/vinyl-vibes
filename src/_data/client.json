@@ -1,8 +1,8 @@
 {
-  "name": "W. C. McLEOD AGENCY",
-  "email": "wcmcorp@gmail.com",
-  "phone": "734-225-4919",
-  "phoneFormatted": "(734)-225-4919",
+  "name": "Trinity Commercial LLC",
+  "email": "info@trinitycommercial.com",
+  "phone": "To Be Added",
+  "phoneFormatted": "To Be Added",
   "address": {
     "lineOne": "First Address Line",
     "lineTwo": "Second Address Line, If Needed",
@@ -11,5 +11,5 @@
     "postcode": "To Be Added",
     "mapLink": "https://goo.gl/maps/"
   },
-  "domain": "www.wcmcleodagency.com"
+  "domain": "www.trinitycommercial.com"
 }
