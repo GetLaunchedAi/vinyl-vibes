@@ -351,4 +351,16 @@
     }
 }
 
+.cocktail_menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cocktail_menu img {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
+
                                 

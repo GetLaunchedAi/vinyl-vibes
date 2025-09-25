@@ -1,15 +1,15 @@
 {
-  "name": "Perfection Moving Company Low Low Rates",
-  "email": "Perfection_movers@yahoo.com",
-  "phone": "2486483099",
-  "phoneFormatted": "(248) 648-3099",
+  "name": "Vinyl Vibes",
+  "email": "info@vinylvibesbar.com",
+  "phone": "5862870500",
+  "phoneFormatted": "(586) 287-0500",
   "address": {
-    "lineOne": "First Address Line",
-    "lineTwo": "Second Address Line, If Needed",
-    "city": "To Be Added",
+    "lineOne": "22757 Woodward Ave",
+    "lineTwo": "",
+    "city": "Ferndale",
     "county": "MI",
-    "postcode": "To Be Added",
+    "postcode": "48220",
     "mapLink": "https://goo.gl/maps/"
   },
-  "domain": "www.perfectionmovers.com"
+  "domain": "www.vinylvibesbar.com"
 }
