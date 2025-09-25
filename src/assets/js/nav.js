@@ -6,6 +6,7 @@ const hamburgerMenu = document.querySelector("#navigation .hamburger-menu");
 const serviceMenu = document.querySelector("#navigation .dropdown");
 const about = document.querySelector('#About\\ Us')
 const contact = document.querySelector('#Contact')
+const menu = document.querySelector('#Menu')
 
 const screenWidth = window.screen.width;
 
@@ -38,6 +39,7 @@ serviceMenu.addEventListener('click', function () {
         if (screenWidth < 770) {
             about.style.display = 'none'
             contact.style.display = 'none'
+            menu.style.display = 'none'
         }
 
 
@@ -47,6 +49,7 @@ serviceMenu.addEventListener('click', function () {
         if (screenWidth < 770) {
             about.style.display = 'block'
             contact.style.display = 'block'
+            menu.style.display = 'block'
         }
 
 
