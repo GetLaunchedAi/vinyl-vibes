@@ -1092,3 +1092,278 @@
     background: #061623;
   }
 }
+
+/*-- -------------------------- -->
+<---      Scroll Animations      -->
+<--- -------------------------- -*/
+
+/* Base animation styles */
+@media only screen and (min-width: 0em) {
+  /* Initial state for all animated elements - only hide if JavaScript is working */
+  [data-animate]:not(.no-js) {
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Fallback: if JavaScript fails, show elements */
+  .no-js [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Fade in animation */
+  [data-animate="fade-in"]:not(.no-js) {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  [data-animate="fade-in"].animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Slide up animation */
+  [data-animate="slide-up"]:not(.no-js) {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  [data-animate="slide-up"].animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Slide left animation */
+  [data-animate="slide-left"]:not(.no-js) {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  [data-animate="slide-left"].animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Slide right animation */
+  [data-animate="slide-right"]:not(.no-js) {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  [data-animate="slide-right"].animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Scale in animation */
+  [data-animate="scale-in"]:not(.no-js) {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  [data-animate="scale-in"].animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Staggered animations for child elements */
+  .animate-child:not(.no-js) {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-child.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Custom animation delays */
+  [data-animate-delay] {
+    transition-delay: var(--animation-delay, 0s);
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    
+    [data-animate].animate {
+      opacity: 1;
+      transform: none;
+    }
+    
+    .animate-child {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    
+    .animate-child.animate {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/*-- -------------------------- -->
+<---      Sexy Design Updates     -->
+<--- -------------------------- -*/
+
+/* Sexy Handwritten Fonts */
+@media only screen and (min-width: 0em) {
+  /* Main headings with sexy handwritten fonts */
+  .cs-title.sexy-font,
+  h1.sexy-font,
+  h2.sexy-font {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+  }
+
+  /* Special accent headings */
+  .cs-title.sexy-accent,
+  h1.sexy-accent,
+  h2.sexy-accent {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Casual handwritten style */
+  .cs-title.sexy-casual,
+  h1.sexy-casual,
+  h2.sexy-casual {
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Fun script style */
+  .cs-title.sexy-script,
+  h1.sexy-script,
+  h2.sexy-script {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Sleek gradient backgrounds */
+  .sexy-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sexy-gradient-warm {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sexy-gradient-gold {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Sexy button styles */
+  .sexy-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sexy-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+  }
+
+  .sexy-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .sexy-button:hover:before {
+    left: 100%;
+  }
+
+  /* Sexy card styles */
+  .sexy-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .sexy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Image styling - no sliding effects */
+  .image-slider {
+    position: relative;
+    border-radius: 15px;
+  }
+
+  .image-slider img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Sexy section backgrounds */
+  .sexy-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sexy-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+  }
+
+  /* Dark mode sexy styles */
+  body.dark-mode .sexy-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  body.dark-mode .sexy-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+}

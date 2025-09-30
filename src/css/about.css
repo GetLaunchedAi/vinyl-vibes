@@ -5,6 +5,8 @@
 @media only screen and (min-width: 0em) {
   #sbs {
     padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
   }
   #sbs .cs-container {
     width: 100%;
@@ -191,6 +193,7 @@
   #cta {
     position: relative;
     padding: 3.125rem 0;
+    z-index: 0;
   }
   #cta:before {
     content: '';

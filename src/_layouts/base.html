@@ -41,6 +41,11 @@
         media="(prefers-color-scheme: dark)">
     <link rel="manifest" href="/assets/favicons/dark/site.webmanifest" media="(prefers-color-scheme: dark)">
 
+    <!-- Google Fonts - Sexy Handwritten Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Kalam:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+
     <!-- Preload -->
     <link rel="preload" as="image" href="/assets/logo-light.png">
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
@@ -67,7 +72,7 @@
     </title>
 </head>
 
-<body>
+<body class="no-js">
     <!--Screen reader skip main nav-->
     <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
 
@@ -77,6 +82,8 @@
 
     <script defer src="/assets/js/nav.js"></script>
     <script defer src="/assets/js/dark.js"></script>
+    <script defer src="/assets/js/scroll-animations.js"></script>
+    <script defer src="/assets/js/sexy-effects.js"></script>
 
     <!--
         This script adds a class to the body after scrolling 100px
