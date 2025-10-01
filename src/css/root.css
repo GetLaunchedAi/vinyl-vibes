@@ -833,6 +833,8 @@
     background: #1C1C1C;
     padding: 5.25rem 0 1.25rem;
     font-size: min(4vw, 1.2em);
+    position: relative;
+    z-index: 4; /* Higher z-index to appear above hero and main content */
   }
 
   #footer .left-section {

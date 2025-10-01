@@ -10,8 +10,7 @@
     padding: clamp(12.5rem, 25.95vw, 18.75em) 1rem;
     /* prevents the topper line from causing an overflow */
     overflow: hidden;
-    position: relative;
-    z-index: 1;
+    /* Position will be set by local.css for sticky effect */
   }
   #hero-2042 .cs-container {
     width: 100%;
