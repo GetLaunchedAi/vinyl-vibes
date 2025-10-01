@@ -1220,7 +1220,8 @@
   /* Main headings with sexy handwritten fonts */
   .cs-title.sexy-font,
   h1.sexy-font,
-  h2.sexy-font {
+  h2.sexy-font,
+  h3.sexy-font {
     font-family: 'Dancing Script', cursive;
     font-weight: 600;
     font-style: normal;

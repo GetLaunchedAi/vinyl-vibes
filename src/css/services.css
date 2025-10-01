@@ -193,6 +193,9 @@
         font-size: 1.5rem;
         color: var(--primary);
     }
+    #content-page-1402 h4 {
+        color: var(--primary);
+    }
     #content-page-1402 h4,
     #content-page-1402 h5,
     #content-page-1402 h6 {
