@@ -1075,3 +1075,47 @@
     display: none;
   }
 }
+
+/* ============================================ */
+/*                 Hero Background Image         */
+/* ============================================ */
+
+/* Hero section with background image */
+.hero-bg-image {
+  background-image: url('/images/hero_img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Overlay for better text readability */
+.hero-bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 16.54%, rgba(0, 0, 0, 0.64) 59.41%), 
+              linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensure content is above overlay */
+.hero-bg-image .cs-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile optimization - disable fixed attachment on mobile */
+@media only screen and (max-width: 768px) {
+  .hero-bg-image {
+    background-attachment: scroll;
+    min-height: 80vh;
+  }
+}
+
