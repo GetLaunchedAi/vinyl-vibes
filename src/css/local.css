@@ -1118,17 +1118,18 @@
   overflow: hidden; /* Prevent overflow */
 }
 
-/* Parallax background */
+/* Parallax background - now stays fixed */
 .parallax-bg {
-  position: absolute;
-  top: -20%; /* Start above to account for parallax movement */
+  position: fixed; /* Changed from absolute to fixed for true fixed positioning */
+  top: 0;
   left: 0;
   width: 100%;
-  height: 140%; /* Extra height for parallax effect, but contained */
+  height: 100vh; /* Full viewport height */
   background-image: url('/images/hero_img.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* Ensure background stays fixed */
   will-change: transform; /* Optimize for animations */
   transform: translateZ(0); /* Force hardware acceleration */
 }
@@ -1162,10 +1163,12 @@
   transition: opacity 0.3s ease;
 }
 
-/* Ensure content is above overlay */
+/* Ensure content is above overlay and can be animated */
 .hero-bg-image .cs-container {
   position: relative;
   z-index: 2;
+  will-change: transform; /* Optimize for content animation */
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 /* Mobile optimization - disable parallax on mobile */
@@ -1186,6 +1189,11 @@
   .parallax-bg {
     display: none;
   }
+  
+  /* Reset content transforms on mobile */
+  .hero-bg-image .cs-container {
+    transform: none !important;
+  }
 }
 
 /* Reduced motion support */
@@ -1196,6 +1204,11 @@
   
   .parallax-overlay {
     transition: none;
+  }
+  
+  /* Disable content animation for reduced motion */
+  .hero-bg-image .cs-container {
+    transform: none !important;
   }
 }
 

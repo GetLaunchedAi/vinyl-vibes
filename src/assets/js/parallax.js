@@ -38,27 +38,43 @@ function initHeroParallax() {
   parallaxContainer.appendChild(parallaxBg);
   heroSection.insertBefore(parallaxContainer, heroSection.firstChild);
   
-  // Remove fallback background image since parallax is now active
-  heroSection.style.backgroundImage = 'none';
+  // Remove fallback background image since parallax is now active (only on desktop)
+  const isMobile = window.innerWidth <= 768;
+  if (!isMobile) {
+    heroSection.style.backgroundImage = 'none';
+  }
+  
+  // Get the content container to animate
+  const contentContainer = heroSection.querySelector('.cs-container');
   
   // Parallax scroll handler
   let ticking = false;
   
   function updateParallax() {
     const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5; // Adjust speed here (-0.5 = slower than scroll)
+    const heroHeight = heroSection.offsetHeight;
     
-    // Apply parallax transform
-    const parallaxBg = heroSection.querySelector('.parallax-bg');
-    if (parallaxBg) {
-      parallaxBg.style.transform = `translateY(${rate}px)`;
-    }
-    
-    // Add fade effect as user scrolls
-    const fadeRate = Math.min(scrolled / (window.innerHeight * 0.5), 1);
-    const overlay = heroSection.querySelector('.parallax-overlay');
-    if (overlay) {
-      overlay.style.opacity = 0.4 + (fadeRate * 0.3); // Fade from 0.4 to 0.7
+    // Only apply parallax effect when hero section is in view
+    const heroRect = heroSection.getBoundingClientRect();
+    if (heroRect.bottom >= 0 && heroRect.top <= window.innerHeight) {
+      // Background stays fixed (no transform needed)
+      const parallaxBg = heroSection.querySelector('.parallax-bg');
+      if (parallaxBg) {
+        parallaxBg.style.transform = 'translateY(0)'; // Keep background fixed
+      }
+      
+      // Content moves up slowly as user scrolls down
+      if (contentContainer) {
+        const contentRate = scrolled * 0.3; // Positive value to move content up
+        contentContainer.style.transform = `translateY(-${contentRate}px)`;
+      }
+      
+      // Add fade effect as user scrolls
+      const fadeRate = Math.min(scrolled / (window.innerHeight * 0.5), 1);
+      const overlay = heroSection.querySelector('.parallax-overlay');
+      if (overlay) {
+        overlay.style.opacity = 0.4 + (fadeRate * 0.3); // Fade from 0.4 to 0.7
+      }
     }
     
     ticking = false;
@@ -74,6 +90,20 @@ function initHeroParallax() {
   // Listen for scroll events
   window.addEventListener('scroll', requestTick, { passive: true });
   
+  // Handle window resize to ensure proper background on mobile
+  window.addEventListener('resize', function() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      heroSection.style.backgroundImage = "url('/images/hero_img.png')";
+      heroSection.style.backgroundSize = 'cover';
+      heroSection.style.backgroundPosition = 'center';
+      heroSection.style.backgroundRepeat = 'no-repeat';
+      heroSection.style.backgroundAttachment = 'scroll';
+    } else {
+      heroSection.style.backgroundImage = 'none';
+    }
+  });
+  
   // Initial call
   updateParallax();
 }
@@ -86,6 +116,17 @@ function initParallaxOptimizations() {
   
   if (isMobile) {
     console.log('Parallax disabled on mobile for performance');
+    
+    // Ensure hero section has background image on mobile
+    const heroSection = document.querySelector('.hero-bg-image');
+    if (heroSection) {
+      heroSection.style.backgroundImage = "url('/images/hero_img.png')";
+      heroSection.style.backgroundSize = 'cover';
+      heroSection.style.backgroundPosition = 'center';
+      heroSection.style.backgroundRepeat = 'no-repeat';
+      heroSection.style.backgroundAttachment = 'scroll';
+    }
+    
     return;
   }
   
