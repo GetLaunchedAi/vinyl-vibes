@@ -404,6 +404,9 @@
   #services-1329 {
     padding: var(--sectionPadding);
     position: relative;
+    /* Ensure services section stays above hero parallax */
+    z-index: 2;
+    background: #fff; /* Ensure solid background */
   }
   #services-1329 .cs-container {
     width: 100%;
@@ -621,6 +624,9 @@
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
+  body.dark-mode #services-1329 {
+    background: var(--dark); /* Dark background for dark mode */
+  }
   body.dark-mode #services-1329 .cs-title,
   body.dark-mode #services-1329 .cs-text {
     color: var(--bodyTextColorWhite);
@@ -828,6 +834,10 @@
     /* Centers the button */
     text-align: center;
     padding: var(--sectionPadding);
+    /* Ensure reviews section stays above hero parallax */
+    position: relative;
+    z-index: 2;
+    background: #fff; /* Ensure solid background */
   }
   #reviews .cs-container {
     width: 100%;
@@ -944,6 +954,9 @@
 }
 /* Dark Mode */
 @media only screen and (min-width: 0em) {
+  body.dark-mode #reviews {
+    background: var(--dark); /* Dark background for dark mode */
+  }
   body.dark-mode #reviews .cs-title,
   body.dark-mode #reviews .cs-text,
   body.dark-mode #reviews .cs-item-p,
@@ -1082,13 +1095,42 @@
 
 /* Hero section with background image */
 .hero-bg-image {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  /* Fallback background image in case JavaScript fails */
   background-image: url('/images/hero_img.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  position: relative;
-  min-height: 80vh;
+  /* Ensure hero section has proper stacking context */
+  z-index: 1;
+}
+
+/* Parallax container */
+.parallax-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Keep within hero section bounds */
+  z-index: -1;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Parallax background */
+.parallax-bg {
+  position: absolute;
+  top: -20%; /* Start above to account for parallax movement */
+  left: 0;
+  width: 100%;
+  height: 140%; /* Extra height for parallax effect, but contained */
+  background-image: url('/images/hero_img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform; /* Optimize for animations */
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 /* Overlay for better text readability */
@@ -1103,6 +1145,21 @@
               linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   z-index: 1;
   pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Alternative overlay for parallax effect */
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 16.54%, rgba(0, 0, 0, 0.64) 59.41%), 
+              linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 /* Ensure content is above overlay */
@@ -1111,11 +1168,84 @@
   z-index: 2;
 }
 
-/* Mobile optimization - disable fixed attachment on mobile */
+/* Mobile optimization - disable parallax on mobile */
 @media only screen and (max-width: 768px) {
   .hero-bg-image {
+    min-height: 80vh;
+    background-image: url('/images/hero_img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-attachment: scroll;
-    min-height: 40vh;
+  }
+  
+  .parallax-container {
+    display: none;
+  }
+  
+  .parallax-bg {
+    display: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-bg {
+    transform: none !important;
+  }
+  
+  .parallax-overlay {
+    transition: none;
+  }
+}
+
+/* Performance optimizations */
+.parallax-bg {
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth transitions for parallax elements */
+.parallax-element {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+
+/* About section parallax optimization */
+#sbs-1206 .cs-picture {
+  overflow: hidden;
+}
+
+#sbs-1206 .cs-picture img {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Services section parallax optimization */
+#services-1329 .cs-picture {
+  overflow: hidden;
+}
+
+#services-1329 .cs-picture img {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Mobile optimization for new parallax elements */
+@media only screen and (max-width: 768px) {
+  .parallax-element {
+    transform: none !important;
+  }
+}
+
+/* Reduced motion support for new parallax elements */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-element {
+    transform: none !important;
   }
 }
 
