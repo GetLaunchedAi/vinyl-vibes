@@ -62,7 +62,6 @@
     justify-content: center;
     align-items: center;
     z-index: 9;
-    transition: opacity 0.3s, transform 0.3s;
     backdrop-filter: blur(8px);
     flex: none;
   }
@@ -100,7 +99,6 @@
     top: 0;
     left: 0;
     z-index: -1;
-    transition: width 0.3s;
   }
   #hero-2042 .cs-button-solid:hover:before {
     width: 100%;

@@ -69,14 +69,12 @@
   }
   #dark-mode-toggle .moon {
     z-index: 2;
-    transition: transform .3s, opacity .3s, fill .3s;
     fill: #000;
   }
   #dark-mode-toggle .sun {
     z-index: 1;
     transform: translate(-50%, 100%);
     opacity: 0;
-    transition: transform .3s, opacity .3s;
   }
 }
 /* Desktop */

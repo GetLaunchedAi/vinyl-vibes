@@ -88,7 +88,6 @@
         border-bottom: 1px solid #b4b2c7;
         /* prevents border & padding from affecting height */
         box-sizing: border-box;
-        transition: border 0.3s;
     }
     #cs-contact-242 .cs-input:hover,
     #cs-contact-242 .cs-textarea:hover {
@@ -134,7 +133,6 @@
         left: 0;
         z-index: -1;
         border-radius: 0.25rem;
-        transition: width 0.3s;
     }
     #cs-contact-242 .cs-button-solid:hover:before {
         width: 100%;
@@ -214,7 +212,6 @@
         display: block;
         bottom: 0;
         left: 0;
-        transition: width 0.3s;
     }
     #cs-contact-242 .cs-block {
         /* drop the address to two lines */
@@ -228,7 +225,6 @@
         align-items: center;
         /* prevents flexbox from squishing it */
         flex: none;
-        transition: transform 0.3s;
     }
     #cs-contact-242 .cs-icon {
         /* 32px -36px */

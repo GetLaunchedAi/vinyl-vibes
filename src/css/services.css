@@ -113,28 +113,7 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    @keyframes floatAnimation {
-        0% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-2rem);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
-    @keyframes floatAnimation2 {
-        0% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-3rem);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
+    /* Keyframe animations removed */
     #content-page-1402 {
         padding: var(--sectionPadding);
         background-color: #fff;
@@ -430,11 +409,6 @@
         display: block;
         top: 0;
         left: 0;
-        animation-name: floatAnimation;
-        animation-duration: 5s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
     }
     #content-page-1402 .cs-bubbles:after {
         /* orange bubble */
@@ -449,11 +423,6 @@
         bottom: 0;
         right: 0;
         z-index: -1;
-        animation-name: floatAnimation2;
-        animation-duration: 14s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
     }
 
     .desktop-only {
@@ -587,7 +556,6 @@
     #faq-254 .cs-faq-item {
         list-style: none;
         border-bottom: 1px solid #dad9e3;
-        transition: border-bottom 0.3s;
     }
     #faq-254 .cs-faq-item.active {
         border-bottom: 1px solid var(--primary);
@@ -634,7 +602,6 @@
         display: block;
         top: 50%;
         right: 0.25rem;
-        transition: transform 0.3s;
     }
     #faq-254 .cs-button:after {
         /* plus sign */
@@ -649,9 +616,6 @@
         right: 0.25rem;
         transform: rotate(90deg);
         transform-origin: center;
-        transition:
-            opacity 0.5s,
-            transform 0.3s;
     }
     #faq-254 .cs-item-p {
         /* 14px - 16px */
@@ -664,9 +628,6 @@
         color: var(--bodyTextColor);
         /* clips the text so it doesn't show up */
         overflow: hidden;
-        transition:
-            opacity 0.3s,
-            margin-bottom 0.3s;
     }
     #faq-254 .cs-cta {
         text-align: center;
@@ -727,7 +688,6 @@
         left: 0;
         z-index: -1;
         border-radius: 0.25rem;
-        transition: width 0.3s;
     }
     #faq-254 .cs-button-solid:hover:before {
         width: 100%;
@@ -890,7 +850,6 @@
         left: 0;
         z-index: -1;
         border-radius: 0.25rem;
-        transition: width 0.3s;
     }
     #services-563 .cs-button-solid:hover:before {
         width: 100%;

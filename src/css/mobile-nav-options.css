@@ -48,7 +48,6 @@
     padding: 0;
     top: 50%;
     transform: translateY(-50%);
-    transition: top .3s;
   }
   #navigation .hamburger-menu span {
     height: 2px;
@@ -58,7 +57,6 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    transition: background-color 0.3s;
   }
   #navigation .hamburger-menu span:before {
     content: '';
@@ -70,7 +68,6 @@
     opacity: 1;
     top: -6px;
     left: 0;
-    transition: width .3s, left .3s, top .3s, transform .5s;
   }
   #navigation .hamburger-menu span:after {
     content: '';
@@ -82,7 +79,6 @@
     opacity: 1;
     top: 6px;
     left: 0;
-    transition: width .3s, left .3s, top .3s, transform .3s;
   }
   #navigation .hamburger-menu.clicked span {
     background-color: transparent;
@@ -112,7 +108,6 @@
     top: 4em;
     padding-top: 0;
     height: 0;
-    transition: height 0.3s, padding-top 0.3s, top 0.3s;
   }
   #navigation #navbar-menu ul {
     padding: 0;
@@ -125,7 +120,6 @@
     transform-style: preserve-3d;
     opacity: 0;
     transform: translateY(-0.4375em) rotateX(90deg);
-    transition: opacity .5s, transform .5s;
   }
   #navigation #navbar-menu ul li:nth-of-type(1) {
     transition-delay: .1s;
@@ -212,7 +206,6 @@
     padding: 0;
     top: 50%;
     transform: translateY(-50%);
-    transition: top .3s;
   }
   #navigation .hamburger-menu span {
     height: 2px;
@@ -222,7 +215,6 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    transition: background-color 0.3s;
   }
   #navigation .hamburger-menu span:before {
     content: '';
@@ -234,7 +226,6 @@
     opacity: 1;
     top: -6px;
     left: 0;
-    transition: width .3s, left .3s, top .3s, transform .5s;
   }
   #navigation .hamburger-menu span:after {
     content: '';
@@ -246,7 +237,6 @@
     opacity: 1;
     top: 6px;
     left: 0;
-    transition: width .3s, left .3s, top .3s, transform .3s;
   }
   #navigation .hamburger-menu.clicked span {
     background-color: transparent;
@@ -276,7 +266,6 @@
     top: 4em;
     padding-top: 0;
     width: 0em;
-    transition: width .3s;
   }
   #navigation #navbar-menu ul {
     padding: 0;
@@ -291,7 +280,6 @@
     transform-style: preserve-3d;
     opacity: 0;
     transform: translateY(-0.4375em) rotateX(0deg);
-    transition: opacity .5s, transform .5s;
   }
   #navigation #navbar-menu ul li:nth-of-type(1) {
     transition-delay: .1s;
