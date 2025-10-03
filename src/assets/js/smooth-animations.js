@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Create intersection observer for smooth animations
   const observerOptions = {
-    threshold: 0.15, // Trigger when 15% of element is visible
+    threshold: 0.25, // Trigger when 25% of element is visible
     rootMargin: '0px 0px -80px 0px' // Start animation 80px before element comes into view
   };
 
