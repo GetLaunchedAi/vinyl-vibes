@@ -18,6 +18,18 @@ document.addEventListener('DOMContentLoaded', function() {
   document.body.classList.remove('no-js');
   
   console.log('Scroll animations initialized');
+  
+  // Check if IntersectionObserver is supported
+  if (!('IntersectionObserver' in window)) {
+    console.warn('IntersectionObserver not supported, falling back to immediate animation');
+    // Fallback: immediately animate all elements
+    const allAnimatedElements = document.querySelectorAll('[data-animate]');
+    allAnimatedElements.forEach(element => {
+      element.classList.add('animate');
+    });
+    return;
+  }
+  
   // Create intersection observer for scroll animations
   const observerOptions = {
     threshold: 0.1, // Trigger when 10% of element is visible
@@ -61,10 +73,31 @@ document.addEventListener('DOMContentLoaded', function() {
   // Fallback: Show all animated elements after 2 seconds if they haven't been animated
   setTimeout(() => {
     const unanimatedElements = document.querySelectorAll('[data-animate]:not(.animate)');
-    unanimatedElements.forEach(element => {
-      element.classList.add('animate');
-    });
+    if (unanimatedElements.length > 0) {
+      console.warn(`Fallback triggered: ${unanimatedElements.length} elements not animated`);
+      unanimatedElements.forEach(element => {
+        element.classList.add('animate');
+      });
+    }
   }, 2000);
+  
+  // Additional fallback for mobile devices - reduce animation complexity
+  const isMobile = window.innerWidth <= 768 || 
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    console.log('Mobile device detected - optimizing animations');
+    // Reduce animation delays on mobile for better performance
+    const mobileElements = document.querySelectorAll('[data-animate-delay]');
+    mobileElements.forEach(element => {
+      const currentDelay = element.style.getPropertyValue('--animation-delay');
+      if (currentDelay) {
+        // Reduce delay by half on mobile
+        const newDelay = parseFloat(currentDelay) * 0.5;
+        element.style.setProperty('--animation-delay', `${newDelay}s`);
+      }
+    });
+  }
 });
 
 // Utility function to add animation classes to elements
