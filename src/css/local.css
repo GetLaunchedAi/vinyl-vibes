@@ -823,15 +823,7 @@
     max-width: 33.875rem;
   }
   #sbs-r .cs-topper {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
     text-align: left;
-    letter-spacing: .1em;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.25rem;
-    display: block;
   }
   #sbs-r .cs-title {
     font-size: var(--headerFontSize);
@@ -924,7 +916,7 @@
     border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
   }
   body.dark-mode #sbs-r .cs-topper {
-    color: var(--primaryLight);
+    color: var(--primary);
   }
   body.dark-mode #sbs-r .cs-title,
   body.dark-mode #sbs-r .cs-text,
@@ -966,15 +958,8 @@
     margin: auto;
   }
   #reviews .cs-topper {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
     text-align: center;
-    letter-spacing: .1em;
-    font-weight: 700;
-    color: var(--primary);
     margin-bottom: 1rem;
-    display: block;
   }
   #reviews .cs-title {
     font-size: var(--headerFontSize);
@@ -1274,3 +1259,11 @@ body.dark-mode .main-content-container {
   }
 }
 
+#sbs-1206 .cs-title {
+  font-size: var(--headerFontSize);
+  font-weight: 900;
+  line-height: 1.2em;
+  margin-bottom:  1rem;
+  color: var(--headerColor);
+  position: relative;
+}

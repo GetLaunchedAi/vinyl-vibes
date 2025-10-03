@@ -761,7 +761,7 @@
         background-color: transparent;
     }
     body.dark-mode #faq-254 .cs-topper {
-        color: var(--primaryLight);
+        color: var(--primary);
     }
     body.dark-mode #faq-254 .cs-title,
     body.dark-mode #faq-254 .cs-text {
@@ -810,7 +810,7 @@
     }
 
     #services-563 .cs-topper {
-        color: var(--headerColor);
+        color: var(--primary);
     }
     #services-563 .cs-text {
         margin-bottom: 1rem;
@@ -937,7 +937,7 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode #services-563 .cs-topper {
-        color: var(--bodyTextColorWhite);
+        color: var(--primary);
     }
     body.dark-mode #services-563 .cs-color {
         color: var(--primaryLight);
@@ -1029,7 +1029,7 @@ hr {
     }
     
     body.dark-mode #performances .cs-topper {
-        color: var(--bodyTextColorWhite);
+        color: var(--primary);
     }
     
     body.dark-mode #performances .cs-color {

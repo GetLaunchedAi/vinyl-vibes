@@ -13,10 +13,10 @@
     --bodyTextColor: #4E4B66;
     --bodyTextColorWhite: #FAFBFC;
     --headerColor: #1a1a1a;
-    /* 13px - 16px */
-    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-    /* 31px - 49px */
-    --headerFontSize: clamp(1.9375rem, 4.5vw, 3.0625rem);
+    /* 11px - 14px */
+    --topperFontSize: clamp(0.6875rem, 1.4vw, 0.875rem);
+    /* 33px - 52px */
+    --headerFontSize: clamp(2.0625rem, 4.8vw, 3.25rem);
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
   }
@@ -67,6 +67,31 @@
     overflow-x: hidden;
   }
 
+  /* Ensure all text elements use Roboto for consistency */
+  * {
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+
+  /* Universal topper styling */
+  .cs-topper {
+    color: #000000 !important; /* Black on light mode */
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+  }
+
+  /* Dark mode topper styling */
+  body.dark-mode .cs-topper {
+    color: #ffffff !important; /* White on dark mode */
+  }
+
+  /* Hero topper always white */
+  #hero-2042 .cs-topper {
+    color: #ffffff !important; /* Always white in hero section */
+  }
+
+
   *,
   *:before,
   *:after {
@@ -93,6 +118,9 @@
   h6 {
     margin: 0;
     color: var(--headerColor);
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.2em;
   }
 
   p,
@@ -780,7 +808,7 @@
 
   #int-hero h1 {
     color: #fff;
-    font-size: 2.13333333rem;
+    font-size: var(--headerFontSize);
     text-align: center;
     margin: 0 auto;
     position: relative;
@@ -808,7 +836,7 @@
   }
 
   #int-hero h1 {
-    font-size: 4rem;
+    font-size: var(--headerFontSize);
   }
 }
 
@@ -1217,15 +1245,39 @@
 
 /* Sexy Handwritten Fonts */
 @media only screen and (min-width: 0em) {
-  /* Main headings with sexy handwritten fonts */
-  .cs-title.sexy-font,
-  h1.sexy-font,
-  h2.sexy-font,
-  h3.sexy-font {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 600;
+  /* Main headings with clean, readable fonts (non-gradient) */
+  .cs-title.sexy-font:not(.sexy-gradient):not([class*="sexy-gradient"]),
+  h1.sexy-font:not(.sexy-gradient):not([class*="sexy-gradient"]),
+  h2.sexy-font:not(.sexy-gradient):not([class*="sexy-gradient"]),
+  h3.sexy-font:not(.sexy-gradient):not([class*="sexy-gradient"]) {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
     font-style: normal;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+  }
+
+  /* ALL gradient text elements use cursive fonts */
+  .sexy-gradient,
+  .sexy-gradient-warm,
+  .sexy-gradient-gold,
+  [class*="sexy-gradient"],
+  .cs-title.sexy-font.sexy-gradient,
+  h1.sexy-font.sexy-gradient,
+  h2.sexy-font.sexy-gradient,
+  h3.sexy-font.sexy-gradient,
+  .cs-title.sexy-font [class*="sexy-gradient"],
+  h1.sexy-font [class*="sexy-gradient"],
+  h2.sexy-font [class*="sexy-gradient"],
+  h3.sexy-font [class*="sexy-gradient"],
+  .cs-title [class*="sexy-gradient"],
+  h1 [class*="sexy-gradient"],
+  h2 [class*="sexy-gradient"],
+  h3 [class*="sexy-gradient"],
+  .title [class*="sexy-gradient"] {
+    font-family: 'Dancing Script', cursive !important;
+    font-weight: 700 !important;
+    font-style: normal;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
     letter-spacing: 1px;
   }
 
@@ -1233,50 +1285,67 @@
   .cs-title.sexy-accent,
   h1.sexy-accent,
   h2.sexy-accent {
-    font-family: 'Great Vibes', cursive;
-    font-weight: 400;
-    font-size: 1.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
   }
 
-  /* Casual handwritten style */
+  /* Casual style */
   .cs-title.sexy-casual,
   h1.sexy-casual,
   h2.sexy-casual {
-    font-family: 'Kalam', cursive;
-    font-weight: 400;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 500;
   }
 
-  /* Fun script style */
-  .cs-title.sexy-script,
-  h1.sexy-script,
-  h2.sexy-script {
-    font-family: 'Pacifico', cursive;
-    font-weight: 400;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  /* Script style - clean for non-gradient (no italics) */
+  .cs-title.sexy-script:not(.sexy-gradient):not([class*="sexy-gradient"]),
+  h1.sexy-script:not(.sexy-gradient):not([class*="sexy-gradient"]),
+  h2.sexy-script:not(.sexy-gradient):not([class*="sexy-gradient"]) {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 600;
+    font-style: normal;
   }
 
-  /* Sleek gradient backgrounds */
-  .sexy-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Script style with gradient uses Pacifico cursive - override general gradient rule */
+  .cs-title.sexy-script.sexy-gradient,
+  h1.sexy-script.sexy-gradient,
+  h2.sexy-script.sexy-gradient,
+  .cs-title.sexy-script [class*="sexy-gradient"],
+  h1.sexy-script [class*="sexy-gradient"],
+  h2.sexy-script [class*="sexy-gradient"],
+  .title.sexy-script [class*="sexy-gradient"],
+  .sexy-script.sexy-gradient,
+  .sexy-script.sexy-gradient-warm,
+  .sexy-script.sexy-gradient-gold {
+    font-family: 'Pacifico', cursive !important;
+    /* font-weight: 700 !important; */
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    letter-spacing: 1px;
   }
 
-  .sexy-gradient-warm {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
+  /* Universal gradient that works in both light and dark modes */
+  .sexy-gradient,
+  .sexy-gradient-warm,
   .sexy-gradient-gold {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, #e37b2f 50%, #a02c27 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    /* Fallback for browsers that don't support background-clip: text */
+    color: var(--primary);
+  }
+
+  /* Dark mode adjustments for better contrast */
+  body.dark-mode .sexy-gradient,
+  body.dark-mode .sexy-gradient-warm,
+  body.dark-mode .sexy-gradient-gold {
+    background: linear-gradient(135deg, var(--primary) 0%, #e37b2f 50%, #a02c27 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fallback for browsers that don't support background-clip: text */
+    color: var(--primary);
   }
 
   /* Sexy button styles */

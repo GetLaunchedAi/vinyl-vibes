@@ -40,7 +40,7 @@ function initGradientText() {
   
   gradientTexts.forEach(text => {
     // Add subtle animation to gradient text
-    text.style.animation = 'gradientShift 3s ease-in-out infinite alternate';
+    text.style.animation = 'gradientShift 4s ease-in-out infinite alternate';
   });
   
   // Add CSS animation for gradient text
@@ -49,20 +49,15 @@ function initGradientText() {
     style.id = 'gradient-animation-styles';
     style.textContent = `
       @keyframes gradientShift {
-        0% { filter: hue-rotate(0deg); }
-        100% { filter: hue-rotate(20deg); }
+        0% { filter: hue-rotate(0deg) brightness(1); }
+        50% { filter: hue-rotate(10deg) brightness(1.1); }
+        100% { filter: hue-rotate(0deg) brightness(1); }
       }
       
-      .sexy-gradient {
-        animation: gradientShift 4s ease-in-out infinite alternate;
-      }
-      
-      .sexy-gradient-warm {
-        animation: gradientShift 3s ease-in-out infinite alternate;
-      }
-      
+      .sexy-gradient,
+      .sexy-gradient-warm,
       .sexy-gradient-gold {
-        animation: gradientShift 5s ease-in-out infinite alternate;
+        animation: gradientShift 4s ease-in-out infinite;
       }
     `;
     document.head.appendChild(style);

@@ -27,15 +27,7 @@
         align-items: center;
     }
     #cs-contact-242 .cs-topper {
-        font-size: var(--topperFontSize);
-        line-height: 1.2em;
-        text-transform: uppercase;
         text-align: inherit;
-        letter-spacing: 0.1em;
-        font-weight: 700;
-        color: var(--primary);
-        margin-bottom: 0.25rem;
-        display: block;
     }
     #cs-contact-242 .cs-title {
         font-size: var(--headerFontSize);

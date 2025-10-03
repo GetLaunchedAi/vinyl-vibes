@@ -168,8 +168,7 @@
   #hero-2042 .cs-video-wrapper::before {
     background: linear-gradient(270deg, rgba(0, 0, 0, 0) 51.02%, rgba(0, 0, 0, 0.64) 75.13%), linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   }
-}
-
-.service-link{
-  color: black !important;
+  .service-link{
+    color: black !important;
+  }
 }
