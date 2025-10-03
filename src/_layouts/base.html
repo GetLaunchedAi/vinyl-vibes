@@ -82,9 +82,30 @@
 
     <script defer src="/assets/js/nav.js"></script>
     <script defer src="/assets/js/dark.js"></script>
-    <script defer src="/assets/js/animation-controller.js"></script>
+    <script defer src="/assets/js/smooth-animations.js"></script>
+    <script defer src="/assets/js/hero-animation.js"></script>
 
-    <!-- Scroll-based animations removed -->
+    <!--
+        This script adds a class to the body after scrolling 100px
+        and we used these body.scroll styles to create some on scroll 
+        animations with the navbar
+    -->
+    <script defer>
+        document.addEventListener('scroll', (e) => {
+            const scroll = document.documentElement.scrollTop;
+            if (scroll >= 100) {
+                document
+                    .querySelector('body')
+                    .classList
+                    .add('scroll')
+            } else {
+                document
+                    .querySelector('body')
+                    .classList
+                    .remove('scroll')
+            }
+        });
+    </script>
 
 </body>
 
