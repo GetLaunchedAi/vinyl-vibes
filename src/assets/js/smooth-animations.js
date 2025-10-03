@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Create intersection observer for smooth animations
   const observerOptions = {
-    threshold: 0.25, // Trigger when 25% of element is visible
-    rootMargin: '0px 0px -80px 0px' // Start animation 80px before element comes into view
+    threshold: [0.1, 0.25, 0.5], // Multiple thresholds for better detection
+    rootMargin: '0px 0px -50px 0px' // Start animation 50px before element comes into view
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
         // Add animation class when element comes into view
         entry.target.classList.add('animate');
         
@@ -47,12 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, observerOptions);
 
-  // Observe all elements with animation attributes
-  allAnimatedElements.forEach(element => {
-    observer.observe(element);
-  });
+  // Small delay to ensure DOM is fully ready
+  setTimeout(() => {
+    // Observe all elements with animation attributes
+    allAnimatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  }, 100);
 
-  // Fallback: Show all animated elements after 3 seconds if they haven't been animated
+  // Fallback: Show all animated elements after 2 seconds if they haven't been animated
   setTimeout(() => {
     const unanimatedElements = document.querySelectorAll('[data-animate]:not(.animate)');
     if (unanimatedElements.length > 0) {
@@ -61,7 +64,19 @@ document.addEventListener('DOMContentLoaded', function() {
         element.classList.add('animate');
       });
     }
-  }, 3000);
+  }, 2000);
+
+  // Additional fallback for fast scrolling - check every 500ms
+  setInterval(() => {
+    const unanimatedElements = document.querySelectorAll('[data-animate]:not(.animate)');
+    unanimatedElements.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        element.classList.add('animate');
+      }
+    });
+  }, 500);
   
   // Mobile device detection and optimization
   const isMobile = window.innerWidth <= 768 || 
