@@ -362,10 +362,10 @@
         gap: 0.5rem;
     }
     #content-page-1402 .cs-h3-icon {
-        width: 2rem;
+        /* width: 2rem; */
         height: auto;
         display: block;
-        filter: brightness(0) saturate(100%) invert(89%) sepia(60%) saturate(477%) hue-rotate(8deg) brightness(95%) contrast(100%);
+        /* filter: brightness(0) saturate(100%) invert(89%) sepia(60%) saturate(477%) hue-rotate(8deg) brightness(95%) contrast(100%); */
 
     }
     #content-page-1402 .cs-item-text {
@@ -852,12 +852,12 @@
         justify-content: flex-start;
         /* push icon top the top so if the list item goes to two lines the icon stays at the top */
         align-items: flex-start;
-        gap: 1.25rem;
+        gap: 1rem;
     }
     #services-563 .cs-icon {
         /* adds extra space between the icon and top of parent so it's more centered */
         margin-top: clamp(0.125rem, 0.47vw, 0.4375rem);
-        filter: brightness(0) saturate(100%) invert(89%) sepia(60%) saturate(477%) hue-rotate(8deg) brightness(95%) contrast(100%);
+        /* filter: brightness(0) saturate(100%) invert(89%) sepia(60%) saturate(477%) hue-rotate(8deg) brightness(95%) contrast(100%); */
 
     }
     #services-563 .cs-button-solid {
